@@ -20,16 +20,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 100px 0;
   font-family: var(--main-font);
   font-variation-settings: "wght" var(--main-font-weight);
   background-color: var(--background-color);
   color: var(--accent-color);
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: var(--background-image) fixed center / cover;
 }
 
 .page__header {
@@ -283,18 +279,15 @@
   position: relative;
 }
 
-.footer {
-  background: var(--background-color, #fff);
-  max-width: calc(100% * 310 / 375);
-}
-
 .footer__button {
-  gap: 8px;
-  padding: 15px 20px;
-  align-items: center;
+ display: flex;
+  flex-direction: row;
   justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  max-width: calc(100% * 310 / 375);
+  margin: 0 auto;
 }
 
 .footer__icon {
@@ -345,6 +338,12 @@ dialog::backdrop {
   width: 100%;
   text-transform: uppercase;
   padding: 9px 17px;
+}
+
+@media (width < 375px) {
+  .button-fillable {
+    flex-direction: column;
+  }
 }
 
 @supports (-webkit-text-stroke: 1px var(--background-color)) {
